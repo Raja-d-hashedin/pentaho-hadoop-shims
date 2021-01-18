@@ -134,8 +134,8 @@ public class HadoopShimImpl extends CommonHadoopShim {
       }
       runtimeJobTracker = jobtrackerHost + ":" + jobtrackerPort;
     }
-
-    conf.set( "fs.default.name", runtimeFsDefaultName );
+System.out.println("<<<-------------------------------- fs.default.name ------------------------------------------------>>");
+   // conf.set( "fs.default.name", runtimeFsDefaultName );
     conf.set( "mapred.job.tracker", runtimeJobTracker );
   }
 }

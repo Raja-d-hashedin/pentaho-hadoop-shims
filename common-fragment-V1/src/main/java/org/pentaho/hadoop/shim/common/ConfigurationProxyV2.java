@@ -363,6 +363,11 @@ public class ConfigurationProxyV2 implements Configuration {
   @Override public RunningJob submit() throws IOException, ClassNotFoundException, InterruptedException {
     if ( YarnQueueAclsVerifier
       .verify( ( createClusterDescription( getJob().getConfiguration() ) ).getQueueAclsForCurrentUser() ) ) {
+      System.out.println("********************* ConfigurationProxy.submit() *********************************");
+     // WordCount2.submit(getJob());
+      System.out.println("*********************** wc3.submit(); ************************************");
+      WordCount3 wc3=new WordCount3();
+      wc3.submit();
       getJob().submit();
       return new RunningJobProxyV2( getJob() );
     } else {

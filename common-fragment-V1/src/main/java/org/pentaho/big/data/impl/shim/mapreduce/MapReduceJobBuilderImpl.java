@@ -31,6 +31,7 @@ import org.pentaho.hadoop.shim.api.internal.fs.FileSystem;
 import org.pentaho.hadoop.shim.api.internal.fs.Path;
 import org.pentaho.hadoop.shim.api.mapreduce.MapReduceJobAdvanced;
 import org.pentaho.hadoop.shim.api.mapreduce.MapReduceJobBuilder;
+import org.pentaho.hadoop.shim.common.WordCount3;
 import org.pentaho.hadoop.shim.spi.HadoopShim;
 
 import java.io.IOException;
@@ -168,6 +169,7 @@ public class MapReduceJobBuilderImpl implements MapReduceJobBuilder {
   }
 
   protected void configure( Configuration conf ) throws Exception {
+
     FileSystem fs = hadoopShim.getFileSystem( conf );
     URL[] urls = new URL[] { resolvedJarUrl };
     try ( URLClassLoader loader = new URLClassLoader( urls, hadoopShim.getClass().getClassLoader() ) ) {
